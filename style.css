@@ -1,3 +1,7 @@
 body {
     font: 100%/1.5 system-ui;
-  }
+}
+nav a {
+    display: block;
+    margin-bottom: 10px;
+}
