@@ -9,58 +9,87 @@
 <body>
     <h1>Resume</h1>
     <nav>
+        <a href="index.html">Current Page</a>
         <a href="../index.html">Main Page</a>
         <a href="../projects/index.html">Projects</a>
         <a href="../contacts/index.html">Contacts</a>
         <a href="https://github.com/ps1526" target="_blank">Github</a>
     </nav>
 
-    <section>
-        <h2>Education</h2>
-        <p>University of California San Diego</p>
-        <p>B.S. in Data Science</p>
-        <p>Expected Graduation: 2026</p>
-        <p>GPA: 3.8</p>
-        <p>Relevant Coursework: Data Structures, Machine Learning, Statistical Methods</p>
+    <section id="education">
+        <header>
+            <h2>Education</h2>
+        </header>
+        <article>
+            <header>
+                <img src="../images/UCSD-Symbol.png" alt="UCSD Logo" width="300">
+                <h3>University of California San Diego</h3>
+                <p>B.S. in Data Science</p>
+                <time datetime="2022-09">September 2022</time> - 
+                <time datetime="2026-06">June 2026 (Expected)</time>
+            </header>
+            <ul>
+                <li>GPA: 3.8</li>
+                <li>Relevant Coursework: Data Structures, Machine Learning, Statistical Methods</li>
+            </ul>
+        </article>
     </section>
 
-    <section>
-        <h2>Experience</h2>
-        <p>Tech Startup XYZ</p>
-        <p>Data Science Intern</p>
-        <p>June 2023 - September 2023</p>
-        <ul>
-            <li>Developed a data visualization dashboard using Python and React</li>
-            <li>Analyzed customer data to improve product recommendations</li>
-            <li>Collaborated with team of 5 engineers on machine learning models</li>
-        </ul>
+    <section id="experience">
+        <header>
+            <h2>Professional Experience</h2>
+        </header>
+        <article>
+            <header>
+                <h3>Data Science Intern</h3>
+                <p>Tech Startup XYZ</p>
+                <time datetime="2023-06">June 2023</time> - 
+                <time datetime="2023-09">September 2023</time>
+            </header>
+            <ul>
+                <li>Developed a data visualization dashboard using Python and React</li>
+                <li>Analyzed customer data to improve product recommendations</li>
+                <li>Collaborated with team of 5 engineers on machine learning models</li>
+            </ul>
+        </article>
 
-        <p>UCSD Research Lab</p>
-        <p>Research Assistant</p>
-        <p>January 2023 - May 2023</p>
-        <ul>
-            <li>Assisted in data collection and analysis for ML research project</li>
-            <li>Implemented neural network models using PyTorch</li>
-        </ul>
+        <article>
+            <header>
+                <h3>Research Assistant</h3>
+                <p>UCSD Research Lab</p>
+                <time datetime="2023-01">January 2023</time> - 
+                <time datetime="2023-05">May 2023</time>
+            </header>
+            <ul>
+                <li>Assisted in data collection and analysis for ML research project</li>
+                <li>Implemented neural network models using PyTorch</li>
+            </ul>
+        </article>
     </section>
 
-    <section>
-        <h2>Skills</h2>
-        <ul>
-            <li>Programming: Python, JavaScript, SQL, R</li>
-            <li>Tools: Git, Docker, AWS, TensorFlow</li>
-            <li>Web Development: HTML, CSS, React</li>
-            <li>Data Analysis: Pandas, NumPy, Scikit-learn</li>
-        </ul>
+    <section id="projects">
+        <header>
+            <h2>Notable Projects</h2>
+        </header>
+        <article>
+            <h3>Stock Market Predictor</h3>
+            <p>Built ML model to predict stock trends</p>
+            <a href="https://github.com/username/stock-predictor">View Project</a>
+        </article>
     </section>
 
-    <section>
-        <h2>Projects</h2>
-        <ul>
-            <li>Stock Market Predictor - Built ML model to predict stock trends</li>
-            <li>Campus Navigation App - Developed mobile app for UCSD students</li>
-            <li>Twitter Sentiment Analysis - Analyzed social media trends</li>
-        </ul>
+    <section id="skills">
+        <header>
+            <h2>Technical Skills</h2>
+        </header>
+        <article>
+            <ul>
+                <li>Programming: Python, JavaScript, SQL, R</li>
+                <li>Tools: Git, AWS, TensorFlow</li>
+                <li>Web Development: HTML, CSS, React</li>
+                <li>Data Analysis: Pandas, NumPy, Scikit-learn</li>
+            </ul>
+        </article>
     </section>
 </body>
 </html>
