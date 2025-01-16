@@ -1,187 +1,205 @@
 :root {
-    --color-accent: oklch(65% 50% 0);
-    --color-text: oklch(20% 0.02 240);
-    --color-background: oklch(98% 0.01 240);
-    --nav-border-color: oklch(80% 3% 200);
-  }
-  
-  body {
-    font: 100%/1.5 system-ui;
-    max-width: 100ch;
-    margin-inline: auto;
-    padding: 1em;
-    color: var(--color-text);
-    background-color: var(--color-background);
-    accent-color: var(--color-accent);
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    line-height: 1.1;
-    text-wrap: balance;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-  }
-  
+    --color-accent: #3498db;
+    --color-text: #2c3e50;
+    --color-background: #f8fbfd;
+    --nav-border-color: #bbd6e8;
+}
+
+body {
+  font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: auto;
+  padding: 1em;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  accent-color: var(--color-accent);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 400%;
+  margin-top: 0.5em;
+}
+
+nav {
+  display: flex;
+  border-bottom: 1px solid var(--nav-border-color);
+  margin-bottom: 2em;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100%;
+}
+
+nav li {
+  flex: 1;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+nav a.current {
+  border-bottom: 0.4em solid var(--nav-border-color);
+  padding-bottom: 0.1em;
+}
+
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent);
+  background-color: oklch(from var(--color-accent) 95% 5% h);
+  padding-bottom: 0.1em;
+}
+
+input, 
+textarea, 
+button {
+  font: inherit;
+  padding: 0.5em;
+  border: 1px solid var(--nav-border-color);
+  border-radius: 4px;
+}
+
+button {
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+  max-width: 50ch;
+  margin: 2em 0;
+}
+
+label {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+}
+
+button[type="submit"] {
+  grid-column: 1 / -1;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 2em;
+  margin-top: 2em;
+  width: 100%;
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+
+.projects h2 {
+  margin: 0;
+}
+
+.projects img {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 4px;
+  height: auto;
+}
+
+body > img {
+  max-width: min(100%, 400px);
+  height: auto;
+  margin: 2em 0;
+  border-radius: 8px;
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cv-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2em;
+  margin-top: 2em;
+}
+
+.cv-section {
+  margin-bottom: 1.5em;
+}
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+@media (max-width: 768px) {
   h1 {
-    font-size: 400%;
-    margin-top: 0.5em;
+    font-size: 300%;
   }
-  
-  nav {
-    display: flex;
-    border-bottom: 1px solid var(--nav-border-color);
-    margin-bottom: 2em;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    width: 100%;
-  }
-  
-  nav li {
-    flex: 1;
-  }
-  
-  nav a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    text-align: center;
-    padding: 0.5em;
-    transition: all 0.2s ease;
-    width: 100%;
-  }
-  
-  nav a.current {
-    border-bottom: 0.4em solid var(--nav-border-color);
-    padding-bottom: 0.1em;
-  }
-  
-  nav a:hover {
-    border-bottom: 0.4em solid var(--color-accent);
-    background-color: oklch(from var(--color-accent) 95% 5% h);
-    padding-bottom: 0.1em;
-  }
-  
-  input, 
-  textarea, 
-  button {
-    font: inherit;
-    padding: 0.5em;
-    border: 1px solid var(--nav-border-color);
-    border-radius: 4px;
-  }
-  
-  button {
-    background-color: var(--color-accent);
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
-  }
-  
-  button:hover {
-    opacity: 0.9;
-  }
-  
-  form {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1em;
-    max-width: 50ch;
-    margin: 2em 0;
-  }
-  
-  label {
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-column: 1 / -1;
-  }
-  
-  button[type="submit"] {
-    grid-column: 1 / -1;
-  }
-  
-  .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-    gap: 2em;
-    margin-top: 2em;
-  }
-  
-  .projects article {
-    display: grid;
-    grid-template-rows: subgrid;
-    grid-row: span 3;
-  }
-  
-  .projects h2 {
-    margin: 0;
-  }
-  
-  .projects img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-  }
-  
+
   .cv-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2em;
-    margin-top: 2em;
+    grid-template-columns: 1fr;
   }
-  
-  .cv-section {
-    margin-bottom: 1.5em;
+
+  form {
+    grid-template-columns: 1fr;
   }
-  
-  .cv-entry {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1em;
-    margin-bottom: 1em;
+
+  nav {
+    flex-direction: column;
   }
-  
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 300%;
-    }
-  
-    .cv-container {
-      grid-template-columns: 1fr;
-    }
-  
-    form {
-      grid-template-columns: 1fr;
-    }
-  
-    nav {
-      flex-direction: column;
-    }
-  
-    nav a {
-      text-align: left;
-    }
+
+  nav a {
+    text-align: left;
   }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  .full-width {
-    width: 100%;
-  }
-  
-  a:not(nav a) {
-    color: var(--color-accent);
-    text-decoration: none;
-  }
-  
-  a:not(nav a):hover {
-    text-decoration: underline;
-  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+a:not(nav a) {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:not(nav a):hover {
+  text-decoration: underline;
+}
