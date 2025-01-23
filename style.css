@@ -1,8 +1,21 @@
+html {
+  color-scheme: light dark;
+}
+
 :root {
-    --color-accent: #3498db;
-    --color-text: #2c3e50;
-    --color-background: #f8fbfd;
-    --nav-border-color: #bbd6e8;
+  --color-accent: #3498db;
+  --color-text: #2c3e50;
+  --color-background: #f8fbfd;
+  --nav-border-color: #bbd6e8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+      --color-accent: #5dade2;
+      --color-text: #ecf0f1;
+      --color-background: #1a1a1a;
+      --nav-border-color: #34495e;
+  }
 }
 
 body {
@@ -28,6 +41,7 @@ h1 {
 }
 
 nav {
+  --border-color: oklch(50% 10% 200 / 40%);
   display: flex;
   border-bottom: 1px solid var(--nav-border-color);
   margin-bottom: 2em;
@@ -53,6 +67,7 @@ nav a {
   padding: 0.5em;
   transition: all 0.2s ease;
   width: 100%;
+  border-bottom: 0.1em solid var(--border-color);
 }
 
 nav a.current {
@@ -62,13 +77,15 @@ nav a.current {
 
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
   padding-bottom: 0.1em;
 }
 
-input, 
-textarea, 
-button {
+/* Form controls - grouped together */
+input,
+textarea,
+button,
+select {
   font: inherit;
   padding: 0.5em;
   border: 1px solid var(--nav-border-color);
@@ -86,6 +103,13 @@ button {
 
 button:hover {
   opacity: 0.9;
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
 }
 
 form {
@@ -167,23 +191,19 @@ img {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 300%;
+      font-size: 300%;
   }
-
   .cv-container {
-    grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
   }
-
   form {
-    grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
   }
-
   nav {
-    flex-direction: column;
+      flex-direction: column;
   }
-
   nav a {
-    text-align: left;
+      text-align: left;
   }
 }
 
