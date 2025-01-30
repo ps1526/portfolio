@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Yaadein",
+        "year": "2024",
+        "image": "../images/blank.png",
+        "description": "Built scalable backend for AI-driven memory preservation platform with vector-based memory retrieval system. Integrated MFA and passwordless login with Clerk and audio signatures, while implementing encryption and secure storage for user data protection. Technologies used: Next.js, Deepgram, LangChain, Pinecone, Clerk Security."
+    },
+    {
+        "title": "Classify.Ai",
+        "year": "2024",
+        "image": "../images/blank.png",
+        "description": "Developed full-stack RAG application using Next.js, Pinecone, LangChain, and LlamaIndex. Integrated Clerk API with MFA and client-side encryption for security. Optimized system for secure classification of government documents, improving classification speed and accuracy by 95%."
+    },
+    {
+        "title": "Sustainable Shopping Assistant",
+        "year": "2024",
+        "image": "../images/blank.png",
+        "description": "Developed Javascript extension for calculating product carbon emissions across 250 retailers. Integrated WikiRate API for brand ethics scores and Firebase for user emissions tracking. Enabled real-time emissions tracking with personalized sustainability insights and designed clean UI for instant feedback."
+    },
+    {
+        "title": "SoundSearch",
+        "year": "2024",
+        "image": "../images/blank.png",
+        "description": "Built an audio-to-audio search pipeline using Anthropic, LangChain, and Librosa. Created MVP with Next.js, Supabase, and Clerk for usability and search accuracy. Used Librosa for detailed sound analytics to improve search precision and collaborated with YC alum and SDxAI community for scalability guidance."
+    },
+    {
+        "title": "Nanotechnology Knowledge Graph Project",
+        "year": "2024",
+        "image": "../images/blank.png",
+        "description": "At the National Nanotechnology Initiative, developed RDF mappings for federal nanomaterial databases and architected knowledge graph-enhanced LLMs. Focused on computational nanotoxicology prediction and ontology generation, creating innovative solutions for nanomaterial data organization and analysis."
+    },
+    {
+        "title": "Child Stress Prediction System",
+        "year": "2024",
+        "image": "../images/blank.png",
+        "description": "As a Research Assistant at UCSD Cognitive Science Department's Chiba Lab, built predictive models and custom data collection pipeline for analyzing child stress levels from audio affect. Worked under PhD Candidate Akshay Nagaranjan to develop innovative approaches to stress detection in children."
+    },
+    {
+        "title": "HerdHealth Analytics Platform",
+        "year": "2024",
+        "image": "../images/blank.png",
+        "description": "Engineered a comprehensive data analytics application for livestock vital-tracking systems at HerdHealth. Led a multidisciplinary team to secure competition funding and implemented advanced data visualization techniques for real-time livestock health monitoring and actionable insights."
+    },
+    {
+        "title": "Multi-Dataset Consulting Framework",
+        "year": "2023",
+        "image": "../images/blank.png",
+        "description": "At Lumnus Consulting, developed sophisticated consulting frameworks utilizing multi-dataset insights for strategic decision-making. Led a team in implementing data-driven approaches to solve complex business challenges and provide actionable recommendations."
+    },
+    {
+        "title": "AI-Powered Study Assistant",
+        "year": "2023",
+        "image": "../images/blank.png",
+        "description": "Created an intelligent study assistant application that uses natural language processing to generate personalized study materials and quizzes. Implemented spaced repetition algorithms and integrated with various learning management systems to optimize student learning outcomes. Built with Python, FastAPI, and React."
+    },
+    {
+        "title": "Stock Market Predictor",
+        "year": "2024",
+        "image": "../images/stockmarket.jpeg",
+        "description": "Built a machine learning model to predict stock market trends using Python. The project leverages advanced ML techniques and historical market data to generate predictive insights. Tech stack includes Python, TensorFlow, and data analysis libraries like Pandas and NumPy."
+    },
+    {
+        "title": "Data Visualization Dashboard",
+        "year": "2023",
+        "image": "../images/dashboard.png",
+        "description": "Developed an interactive dashboard during internship at Tech Startup XYZ using Python and React. Features include dynamic data visualization and real-time product recommendation analytics."
+    },
+    {
+        "title": "Neural Network Research Project",
+        "year": "2023",
+        "image": "../images/Neural-Networks-Architecture.png",
+        "description": "Implemented neural network models using PyTorch as part of UCSD Research Lab work. Project focused on data collection, analysis, and model implementation for machine learning research."
+    }
+]

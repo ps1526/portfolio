@@ -223,3 +223,17 @@ a:not(nav a) {
 a:not(nav a):hover {
   text-decoration: underline;
 }
+
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#profile-stats dt {
+  grid-row: 1;
+}
+
+#profile-stats dd {
+  grid-row: 2;
+  margin: 0;
+}
