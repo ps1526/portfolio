@@ -1,5 +1,17 @@
 [
     {
+        "title": "Stock Market Predictor",
+        "year": "2024",
+        "image": "../images/stockmarket.jpeg",
+        "description": "Built a machine learning model to predict stock market trends using Python. The project leverages advanced ML techniques and historical market data to generate predictive insights. Tech stack includes Python, TensorFlow, and data analysis libraries like Pandas and NumPy."
+    },
+    {
+        "title": "Data Visualization Dashboard",
+        "year": "2023",
+        "image": "../images/dashboard.png",
+        "description": "Developed an interactive dashboard during internship at Tech Startup XYZ using Python and React. Features include dynamic data visualization and real-time product recommendation analytics."
+    },
+    {
         "title": "Yaadein",
         "year": "2024",
         "image": "../images/blank.png",
@@ -52,18 +64,6 @@
         "year": "2023",
         "image": "../images/blank.png",
         "description": "Created an intelligent study assistant application that uses natural language processing to generate personalized study materials and quizzes. Implemented spaced repetition algorithms and integrated with various learning management systems to optimize student learning outcomes. Built with Python, FastAPI, and React."
-    },
-    {
-        "title": "Stock Market Predictor",
-        "year": "2024",
-        "image": "../images/stockmarket.jpeg",
-        "description": "Built a machine learning model to predict stock market trends using Python. The project leverages advanced ML techniques and historical market data to generate predictive insights. Tech stack includes Python, TensorFlow, and data analysis libraries like Pandas and NumPy."
-    },
-    {
-        "title": "Data Visualization Dashboard",
-        "year": "2023",
-        "image": "../images/dashboard.png",
-        "description": "Developed an interactive dashboard during internship at Tech Startup XYZ using Python and React. Features include dynamic data visualization and real-time product recommendation analytics."
     },
     {
         "title": "Neural Network Research Project",
