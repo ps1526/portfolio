@@ -224,16 +224,52 @@ a:not(nav a):hover {
   text-decoration: underline;
 }
 
+#profile-stats {
+  margin: 2em 0;
+  padding: 2em;
+  border-radius: 8px;
+  background: var(--color-background);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--nav-border-color);
+}
+
+#profile-stats h2 {
+  margin-bottom: 1.5em;
+}
+
 #profile-stats dl {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 1.5em;
+  text-align: center;
 }
 
 #profile-stats dt {
   grid-row: 1;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 #profile-stats dd {
   grid-row: 2;
   margin: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0.5em;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+}
+
+#profile-stats dd:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  #profile-stats dl {
+      grid-template-columns: repeat(2, 1fr);
+  }
 }
