@@ -1,3 +1,4 @@
+/* Your existing root styles */
 html {
   color-scheme: light dark;
 }
@@ -18,6 +19,7 @@ html {
   }
 }
 
+/* Your existing body styles */
 body {
   font: 100%/1.5 system-ui;
   max-width: 100ch;
@@ -28,6 +30,7 @@ body {
   accent-color: var(--color-accent);
 }
 
+/* Your existing heading styles */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   text-wrap: balance;
@@ -40,6 +43,7 @@ h1 {
   margin-top: 0.5em;
 }
 
+/* Your existing nav styles */
 nav {
   --border-color: oklch(50% 10% 200 / 40%);
   display: flex;
@@ -81,7 +85,7 @@ nav a:hover {
   padding-bottom: 0.1em;
 }
 
-/* Form controls - grouped together */
+/* Your existing form styles */
 input,
 textarea,
 button,
@@ -105,6 +109,7 @@ button:hover {
   opacity: 0.9;
 }
 
+/* Your existing utility classes */
 .color-scheme {
   position: absolute;
   top: 1rem;
@@ -112,6 +117,7 @@ button:hover {
   font-size: 80%;
 }
 
+/* Your existing form styles */
 form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -130,6 +136,89 @@ button[type="submit"] {
   grid-column: 1 / -1;
 }
 
+/* Update your existing projects-pie-plot styles and add new D3 visualization styles */
+/* Container for pie chart and legend */
+.container {
+    display: flex;
+    gap: 2em;
+    align-items: flex-start;
+    margin-block: 2em;
+    padding: 2em;
+    border-radius: 8px;
+    background: var(--color-background);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--nav-border-color);
+}
+
+#projects-pie-plot {
+    max-width: 20em;
+    margin-block: 2em;
+    overflow: visible;
+}
+
+#projects-pie-plot path {
+    transition: 300ms;
+    cursor: pointer;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+    opacity: 0.5;
+}
+
+/* Legend styles */
+.legend {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+    gap: 1em;
+    padding: 1em;
+    list-style: none;
+    margin: 0;
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.5em;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+    background-color: color-mix(in oklch, var(--color-accent), canvas 95%);
+}
+
+.legend li:hover {
+    transform: scale(1.02);
+}
+
+.swatch {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 4px;
+    background-color: var(--color);
+}
+
+/* Selection styles */
+.selected {
+    --color: var(--color-accent) !important;
+}
+
+.selected:is(path) {
+    fill: var(--color);
+}
+
+/* Search bar styles */
+.searchBar {
+    width: 100%;
+    margin-bottom: 2em;
+    padding: 0.5em;
+    border: 1px solid var(--nav-border-color);
+    border-radius: 4px;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* Your existing projects styles */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
@@ -157,6 +246,7 @@ button[type="submit"] {
   height: auto;
 }
 
+/* Your existing image styles */
 body > img {
   max-width: min(100%, 400px);
   height: auto;
@@ -171,6 +261,7 @@ img {
   display: block;
 }
 
+/* Your existing CV styles */
 .cv-container {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -189,6 +280,7 @@ img {
   margin-bottom: 1em;
 }
 
+/* Your existing media queries - add D3 responsive styles */
 @media (max-width: 768px) {
   h1 {
       font-size: 300%;
@@ -205,8 +297,22 @@ img {
   nav a {
       text-align: left;
   }
+  /* Add D3 responsive styles */
+  .container {
+      flex-direction: column;
+  }
+    
+  #projects-pie-plot {
+      max-width: 100%;
+      height: auto;
+  }
+    
+  .legend {
+      grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+  }
 }
 
+/* Your existing utility classes */
 .text-center {
   text-align: center;
 }
@@ -215,6 +321,7 @@ img {
   width: 100%;
 }
 
+/* Your existing link styles */
 a:not(nav a) {
   color: var(--color-accent);
   text-decoration: none;
@@ -224,6 +331,7 @@ a:not(nav a):hover {
   text-decoration: underline;
 }
 
+/* Your existing profile stats styles */
 #profile-stats {
   margin: 2em 0;
   padding: 2em;
