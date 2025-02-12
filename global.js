@@ -4,8 +4,10 @@ const ARE_WE_HOME = document.documentElement.classList.contains('home');
 let pages = [
     { url: '', title: 'Home' },
     { url: './projects/', title: 'Projects' },
+    { url: './meta/', title: 'Meta'},
     { url: './contacts/', title: 'Contacts' },
-    { url: './cv/', title: 'Resume' }
+    { url: './cv/', title: 'Resume' },
+    { url: 'https://github.com/ps1526', title: 'Github' }
 ];
 
 pages = pages.map(page => ({

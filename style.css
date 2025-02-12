@@ -1,25 +1,27 @@
-/* Your existing root styles */
-html {
-  color-scheme: light dark;
-}
-
+/* Root and Theme Variables */
 :root {
   --color-accent: #3498db;
   --color-text: #2c3e50;
   --color-background: #f8fbfd;
   --nav-border-color: #bbd6e8;
+  --border-color: oklch(50% 10% 200 / 40%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-      --color-accent: #5dade2;
-      --color-text: #ecf0f1;
-      --color-background: #1a1a1a;
-      --nav-border-color: #34495e;
+    --color-accent: #5dade2;
+    --color-text: #ecf0f1;
+    --color-background: #1a1a1a;
+    --nav-border-color: #34495e;
   }
 }
 
-/* Your existing body styles */
+html {
+  color-scheme: light dark;
+  accent-color: var(--color-accent);
+}
+
+/* Base Styles */
 body {
   font: 100%/1.5 system-ui;
   max-width: 100ch;
@@ -27,10 +29,9 @@ body {
   padding: 1em;
   color: var(--color-text);
   background-color: var(--color-background);
-  accent-color: var(--color-accent);
 }
 
-/* Your existing heading styles */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   text-wrap: balance;
@@ -43,9 +44,8 @@ h1 {
   margin-top: 0.5em;
 }
 
-/* Your existing nav styles */
+/* Navigation */
 nav {
-  --border-color: oklch(50% 10% 200 / 40%);
   display: flex;
   border-bottom: 1px solid var(--nav-border-color);
   margin-bottom: 2em;
@@ -85,7 +85,7 @@ nav a:hover {
   padding-bottom: 0.1em;
 }
 
-/* Your existing form styles */
+/* Form Elements */
 input,
 textarea,
 button,
@@ -109,116 +109,19 @@ button:hover {
   opacity: 0.9;
 }
 
-/* Your existing utility classes */
-.color-scheme {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 80%;
-}
-
-/* Your existing form styles */
 form {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1em;
-  max-width: 50ch;
-  margin: 2em 0;
 }
 
 label {
   display: grid;
   grid-template-columns: subgrid;
-  grid-column: 1 / -1;
+  grid-column: 1/-1;
 }
 
-button[type="submit"] {
-  grid-column: 1 / -1;
-}
-
-/* Update your existing projects-pie-plot styles and add new D3 visualization styles */
-/* Container for pie chart and legend */
-.container {
-    display: flex;
-    gap: 2em;
-    align-items: flex-start;
-    margin-block: 2em;
-    padding: 2em;
-    border-radius: 8px;
-    background: var(--color-background);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--nav-border-color);
-}
-
-#projects-pie-plot {
-    max-width: 20em;
-    margin-block: 2em;
-    overflow: visible;
-}
-
-#projects-pie-plot path {
-    transition: 300ms;
-    cursor: pointer;
-}
-
-#projects-pie-plot:has(path:hover) path:not(:hover) {
-    opacity: 0.5;
-}
-
-/* Legend styles */
-.legend {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
-    gap: 1em;
-    padding: 1em;
-    list-style: none;
-    margin: 0;
-}
-
-.legend li {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    padding: 0.5em;
-    border-radius: 4px;
-    transition: transform 0.2s ease;
-    background-color: color-mix(in oklch, var(--color-accent), canvas 95%);
-}
-
-.legend li:hover {
-    transform: scale(1.02);
-}
-
-.swatch {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    border-radius: 4px;
-    background-color: var(--color);
-}
-
-/* Selection styles */
-.selected {
-    --color: var(--color-accent) !important;
-}
-
-.selected:is(path) {
-    fill: var(--color);
-}
-
-/* Search bar styles */
-.searchBar {
-    width: 100%;
-    margin-bottom: 2em;
-    padding: 0.5em;
-    border: 1px solid var(--nav-border-color);
-    border-radius: 4px;
-    background-color: var(--color-background);
-    color: var(--color-text);
-}
-
-/* Your existing projects styles */
+/* Projects Section */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
@@ -246,158 +149,7 @@ button[type="submit"] {
   height: auto;
 }
 
-/* Your existing image styles */
-body > img {
-  max-width: min(100%, 400px);
-  height: auto;
-  margin: 2em 0;
-  border-radius: 8px;
-  display: block;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Your existing CV styles */
-.cv-container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2em;
-  margin-top: 2em;
-}
-
-.cv-section {
-  margin-bottom: 1.5em;
-}
-
-.cv-entry {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1em;
-  margin-bottom: 1em;
-}
-
-/* Your existing media queries - add D3 responsive styles */
-@media (max-width: 768px) {
-  h1 {
-      font-size: 300%;
-  }
-  .cv-container {
-      grid-template-columns: 1fr;
-  }
-  form {
-      grid-template-columns: 1fr;
-  }
-  nav {
-      flex-direction: column;
-  }
-  nav a {
-      text-align: left;
-  }
-  /* Add D3 responsive styles */
-  .container {
-      flex-direction: column;
-  }
-    
-  #projects-pie-plot {
-      max-width: 100%;
-      height: auto;
-  }
-    
-  .legend {
-      grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
-  }
-}
-
-/* Your existing utility classes */
-.text-center {
-  text-align: center;
-}
-
-.full-width {
-  width: 100%;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.5em 1em;
-  margin: 1em 0;
-}
-
-.stats dt {
-  color: #666;
-  font-weight: 500;
-}
-
-.stats dd {
-  margin: 0;
-  font-weight: 600;
-}
-
-circle {
-  transition: 200ms;
-  transform-origin: center;
-  transform-box: fill-box;
-}
-
-circle:hover {
-  transform: scale(1.5);
-}
-
-circle.selected {
-  fill: #ff6b6b;
-}
-
-.gridlines line {
-  stroke: #ddd;
-  stroke-opacity: 0.5;
-}
-
-.tooltip {
-  position: fixed;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 1em;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  pointer-events: none;
-  transition-duration: 500ms;
-  transition-property: opacity, visibility;
-}
-
-.tooltip[hidden]:not(:hover, :focus-within) {
-  opacity: 0;
-  visibility: hidden;
-}
-
-@keyframes marching-ants {
-  to {
-      stroke-dashoffset: -8;
-  }
-}
-
-.selection {
-  fill-opacity: 0.1;
-  stroke: black;
-  stroke-opacity: 0.7;
-  stroke-dasharray: 5 3;
-  animation: marching-ants 2s linear infinite;
-}
-
-/* Your existing link styles */
-a:not(nav a) {
-  color: var(--color-accent);
-  text-decoration: none;
-}
-
-a:not(nav a):hover {
-  text-decoration: underline;
-}
-
-/* Your existing profile stats styles */
+/* Profile Stats */
 #profile-stats {
   margin: 2em 0;
   padding: 2em;
@@ -442,8 +194,262 @@ a:not(nav a):hover {
   transform: scale(1.05);
 }
 
+/* Data Visualization and Graph Styles */
+#projects-plot {
+  max-width: 20em;
+  margin-block: 2em;
+  overflow: visible;
+}
+
+/* Interactive Path Elements */
+path {
+  transition: 300ms;
+}
+
+&:has(path:hover) {
+  path:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+/* Legend Styling */
+.legend {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  border: 1px solid var(--nav-border-color);
+  border-radius: 4px;
+  background-color: color-mix(in oklch, var(--color-accent), var(--color-background) 95%);
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.legend .swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background-color: var(--color);
+}
+
+.legend em {
+  font-style: normal;
+  margin-left: -0.2rem;
+}
+
+/* Interactive Circle Elements */
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+  cursor: pointer;
+}
+
+circle:hover {
+  transform: scale(1.5);
+  filter: brightness(1.1);
+}
+
+circle.selected {
+  fill: var(--color-accent);
+  stroke: white;
+  stroke-width: 2px;
+}
+
+/* Grid Lines */
+.gridlines {
+  color: var(--nav-border-color);
+  opacity: 0.3;
+}
+
+/* Enhanced Tooltip */
+dl.info {
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap: 0.5em;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--nav-border-color);
+  border-radius: 8px;
+  transition: all 200ms ease;
+  background-color: color-mix(in oklch, var(--color-background), transparent 10%);
+  color: var(--color-text);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+dl.info dt {
+  margin: 0;
+  padding: 0;
+  color: color-mix(in oklch, var(--color-text), transparent 40%);
+  font-weight: 500;
+}
+
+dl.info dd {
+  margin: 0;
+  padding: 0;
+}
+
+dl.info dd a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+dl.info dd a:hover {
+  text-decoration: underline;
+  color: color-mix(in oklch, var(--color-accent), var(--color-text) 20%);
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+}
+
+/* Stats Section */
+#stats {
+  margin: 2em 0;
+  padding: 1.5em;
+  border: 1px solid var(--nav-border-color);
+  border-radius: 8px;
+  background-color: color-mix(in oklch, var(--color-background), transparent 5%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+
+.stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 1em;
+  border-radius: 6px;
+  background-color: color-mix(in oklch, var(--color-accent), var(--color-background) 90%);
+  transition: transform 200ms ease;
+}
+
+.stats > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Selection Animation */
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: var(--color-text);
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+/* Selected State */
+.selected {
+  --color: var(--color-accent) !important;
+}
+
+.selected:is(path) {
+  fill: var(--color);
+  filter: brightness(1.1);
+}
+
+/* Resume Specific Styles */
+.resume-link {
+  flex: 1;
+  text-decoration: none;
+}
+
+.resume-link:hover {
+  color: var(--color-accent);
+}
+
+.resume-item h3 {
+  font-style: italic;
+}
+
+.resume section .resume-item li {
+  padding-block: 3px;
+}
+
+.resume p {
+  font-weight: 600;
+}
+
+/* Profile Styles */
+.profile-intro {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--color-accent);
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
+  h1 {
+    font-size: 300%;
+  }
+  
+  .cv-container {
+    grid-template-columns: 1fr;
+  }
+  
+  form {
+    grid-template-columns: 1fr;
+  }
+  
+  nav {
+    flex-direction: column;
+  }
+  
+  nav a {
+    text-align: left;
+  }
+  
   #profile-stats dl {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
