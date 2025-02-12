@@ -321,6 +321,72 @@ img {
   width: 100%;
 }
 
+.stats {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5em 1em;
+  margin: 1em 0;
+}
+
+.stats dt {
+  color: #666;
+  font-weight: 500;
+}
+
+.stats dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+
+.gridlines line {
+  stroke: #ddd;
+  stroke-opacity: 0.5;
+}
+
+.tooltip {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1em;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+.tooltip[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes marching-ants {
+  to {
+      stroke-dashoffset: -8;
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
 /* Your existing link styles */
 a:not(nav a) {
   color: var(--color-accent);
