@@ -1,5 +1,6 @@
 {
-    "devDependencies": {
-      "elocuent": "^0.0.3"
+    "scripts": {
+        "build": "mkdir -p dist && cp -r * dist/ && rm -rf dist/node_modules dist/dist"
     }
-  }
+    
+}
