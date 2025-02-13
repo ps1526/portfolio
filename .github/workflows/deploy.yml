@@ -2,8 +2,9 @@ name: Code Analysis
 
 on:
   push:
-    branches: [ "main" ]  # or "master" depending on your default branch name
-  workflow_dispatch:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 permissions:
   contents: write
@@ -11,26 +12,18 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
+  analyze:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: '0'
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
+          
       - name: Run Elocuent
         run: |
           npx elocuent -d . -o meta/loc.csv
-
+          
       - name: Commit and Push
         run: |
           git config --local user.email "action@github.com"
@@ -40,18 +33,3 @@ jobs:
           git add -f meta/loc.csv
           git commit -m "Update code statistics" || echo "No changes to commit"
           git push
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Build
-        run: npm run build  # assuming you have a build script in package.json
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './dist'  # adjust this to your build output directory
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
