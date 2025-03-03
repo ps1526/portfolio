@@ -1,6 +1,5 @@
 {
     "scripts": {
-        "build": "mkdir -p dist && cp -r * dist/ && rm -rf dist/node_modules dist/dist"
+      "build": "mkdir -p dist/meta && cp -r index.html style.css meta/*.html meta/*.js meta/*.csv lib global.js dist/"
     }
-    
-}
+  }

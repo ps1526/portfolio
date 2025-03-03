@@ -1,36 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta Analysis</title>
-    <script type="module" src="../global.js"></script>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script type="module" src="./main.js"></script>
+<link rel="stylesheet" href="../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta Analysis</title>
+<script type="module" src="../global.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script type="module" src="./main.js"></script>
 </head>
-<body>
-    <h1>Meta</h1>
-    <p>Basic stats about the code of this website.</p>
-    <div id="stats"></div>
-    <h2>Commits by time of day</h2>
-    
-    <div id="chart"></div>
-    <p id="selection-count">No commits selected</p>
-    <dl id="language-breakdown" class="stats"></dl>
-    <dl id="commit-tooltip" class="info tooltip" hidden>
-        <dt>Commit</dt>
-        <dd>
-            <a href="" id="commit-link" target="_blank"></a>
-        </dd>
-        <dt>Date</dt>
-        <dd id="commit-date"></dd>
-        <dt>Author</dt>
-        <dd id="commit-author"></dd>
-        <dt>Time</dt>
-        <dd id="commit-time"></dd>
-        <dt>Lines of Code</dt>
-        <dd id="commit-loc"></dd>
-    </dl>
+<body class="meta-page">
+<h1>Meta</h1>
+<p>Basic stats about the code of this website.</p>
+<div id="stats"></div>
+
+<!-- Step 1.1: Time filter UI (this will be replaced by scrollytelling later) -->
+<div id="time-filter">
+  <label>
+    Show commits until: 
+    <input type="range" id="time-slider" min="0" max="100" value="100">
+    <time id="selectedTime"></time>
+  </label>
+</div>
+
+<h2>Commits by time of day</h2>
+
+<!-- Step 3.1: Scrollytelling structure for commits -->
+<div id="scrollytelling">
+  <div id="scroll-container">
+    <div id="spacer"></div>
+    <div id="items-container"></div>
+  </div>
+  <div id="chart"></div>
+</div>
+
+<p id="selection-count">No commits selected</p>
+<dl id="language-breakdown" class="stats"></dl>
+
+<h2>File Sizes</h2>
+
+<!-- Step 4.1: Scrollytelling structure for files -->
+<div id="files-scrollytelling">
+  <div class="files"></div>
+  <div id="files-scroll-container">
+    <div id="files-spacer"></div>
+    <div id="files-items-container"></div>
+  </div>
+</div>
+
+<dl id="commit-tooltip" class="info tooltip" hidden>
+<dt>Commit</dt>
+<dd>
+<a href="" id="commit-link" target="_blank"></a>
+</dd>
+<dt>Date</dt>
+<dd id="commit-date"></dd>
+<dt>Author</dt>
+<dd id="commit-author"></dd>
+<dt>Time</dt>
+<dd id="commit-time"></dd>
+<dt>Lines of Code</dt>
+<dd id="commit-loc"></dd>
+</dl>
 </body>
 </html>
